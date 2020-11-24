@@ -21,9 +21,49 @@ class MainApp(Tk):
 
         botonC = calculator.CalcButton(self.teclado, 'C')
         botonC.grid(column=0, row=0)
-
         botonC = calculator.CalcButton(self.teclado, '+/-')
         botonC.grid(column=1, row=0)
+        botonC = calculator.CalcButton(self.teclado, '%')
+        botonC.grid(column=2, row=0)
+        botonC = calculator.CalcButton(self.teclado, '÷')
+        botonC.grid(column=3, row=0)
+
+        botonC = calculator.CalcButton(self.teclado, '7')
+        botonC.grid(column=0, row=1)
+        botonC = calculator.CalcButton(self.teclado, '8')
+        botonC.grid(column=1, row=1)
+        botonC = calculator.CalcButton(self.teclado, '9')
+        botonC.grid(column=2, row=1)
+        botonC = calculator.CalcButton(self.teclado, 'x')
+        botonC.grid(column=3, row=1)
+
+        botonC = calculator.CalcButton(self.teclado, '4')
+        botonC.grid(column=0, row=2)
+        botonC = calculator.CalcButton(self.teclado, '5')
+        botonC.grid(column=1, row=2)
+        botonC = calculator.CalcButton(self.teclado, '6')
+        botonC.grid(column=2, row=2)
+        botonC = calculator.CalcButton(self.teclado, '-')
+        botonC.grid(column=3, row=2)
+
+        botonC = calculator.CalcButton(self.teclado, '1')
+        botonC.grid(column=0, row=3)
+        botonC = calculator.CalcButton(self.teclado, '2')
+        botonC.grid(column=1, row=3)
+        botonC = calculator.CalcButton(self.teclado, '3')
+        botonC.grid(column=2, row=3)
+        botonC = calculator.CalcButton(self.teclado, '+')
+        botonC.grid(column=3, row=3)
+
+        botonC = calculator.CalcButton(self.teclado, '0')
+        botonC.grid(column=0, row=4)
+        #botonC = calculator.CalcButton(self.teclado, '0')
+        #botonC.grid(column=1, row=4)
+        botonC = calculator.CalcButton(self.teclado, ',')
+        botonC.grid(column=2, row=4)
+        botonC = calculator.CalcButton(self.teclado, '=')
+        botonC.grid(column=3, row=4)
+
 
 #TERMINAR DE MONTAR LA CALCULADORA
 #PENSAR QUÉ BUCLE PODEMOS MONTAR, INFORMANDO DE CADA BOTÓN (Diccionario, lista...)
