@@ -1,3 +1,5 @@
+#DESCARTADO
+
 from tkinter import *
 from tkinter import ttk
 import calculator
@@ -27,7 +29,8 @@ class MainApp(Tk):
                         if botones[tecla] == '0':
                             boton = calculator.CalcButton(self.teclado, botones[tecla])
                             boton.config(width=136)
-                            boton.grid(row=fila, column=columna)
+                            boton.grid(row=fila, column=columna, columnspan=2)
+                            boton.grid_propagate(0)
                         else:
                             boton = calculator.CalcButton(self.teclado, botones[tecla])
                             boton.grid(row=fila, column=columna)
