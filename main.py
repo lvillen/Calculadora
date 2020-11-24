@@ -12,12 +12,7 @@ class MainApp(Tk):
         #self.geometry('272x300') No hace falta porque ya lo hemos definido con el tamaño de self.display y self.teclado
         self.title('Calculadora')
     
-    def procesa(self, tecla):
-        #<Toda la lógica de cálculo>
-        #if tecla es numero -> pon el número en el display
-        #if tecla es + -> procesa la suma
-        #if teclas es * -> procesa la multiplicación
-        #if tecla es / -> procesa la división
+        self.calculator = calculator.Calculator(self)
 
 if __name__ == '__main__':
     app = MainApp()

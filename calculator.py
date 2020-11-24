@@ -195,7 +195,7 @@ class Keyboard(ttk.Frame):
             btn.grid(row=boton['r'], column=boton['c'], columnspan=w, rowspan=h)
 
 class Calculator(ttk.Frame):
-    def __init__(self, parent, command):
+    def __init__(self, parent):
         #Defino el cuadro sobre el que luego pintaré el objeto
         ttk.Frame.__init__(self, parent, width=WIDTH*4, height=HEIGHT*6)
         self.pack_propagate(0)
@@ -207,5 +207,18 @@ class Calculator(ttk.Frame):
         self.display = calculator.Display(self)
         self.display.pack(side=TOP, fill=BOTH, expand=True)
 
-        self.teclado = calculator.Keyboard(self, self.display.refresh)
+        self.teclado = calculator.Keyboard(self, self.display.refresh) #Aquí será "self.gestiona_calculos"
         self.teclado.pack(side=TOP)
+
+    def gestiona_calculos(self, tecla):
+        '''
+        Establecer toda la lógica de cálculos posibles en función de lo tecleado
+        
+        variables
+            op1
+            op2
+            operación
+            resultado
+        '''
+
+        pass
