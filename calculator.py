@@ -88,7 +88,7 @@ dbotones = [
         'w': 2
     },
     {
-        'text': ',',
+        'text': '.',
         'r': 4,
         'c': 2,
     },
@@ -223,22 +223,31 @@ class Calculator(ttk.Frame):
             if self.cadena != '' or tecla != '0':    
                 self.cadena += tecla
                 self.display.refresh(self.cadena)
+        elif tecla == '.' and '.' not in self.cadena:
+            if self.cadena != '':
+                self.cadena += tecla
+            else:
+                self.cadena = self.cadena + '0' + tecla            
+            self.display.refresh(self.cadena)
         elif tecla in '+-x÷': #También podía meterse en una tupla ('+','-','x','÷'), que sería más estricta y, en realidad, mejor.
             if self.valor1 == None:
-                self.valor1 = int(self.cadena)
                 self.operador = tecla
+                self.valor1 = float(self.cadena)
             else:
                 if not self.cadena:
+                    self.operador = tecla
                     return
-                self.valor2 = int(self.cadena)
+                self.valor2 = float(self.cadena)
                 self.r = self.calculate()
+                self.operador = tecla
                 self.display.refresh(self.r)
                 self.valor1 = self.r
             self.cadena = ''
         elif tecla == '=':
-            self.valor2 = int(self.cadena)
+            self.valor2 = float(self.cadena)
             self.r = self.calculate()
             self.display.refresh(self.r)
+            self.operador = ''
             self.valor1 = self.r
             self.cadena = ''
         elif tecla == 'C':
@@ -256,7 +265,7 @@ class Calculator(ttk.Frame):
             return self.valor1 - self.valor2
         elif self.operador == 'x':
             return self.valor1 * self.valor2
-        elif self.operador == '/':
+        elif self.operador == '÷':
             return self.valor1 / self.valor2
         else:
-            pass
+            print("Error en operador.")
